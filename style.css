@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Base Styles */
+
+:root {
+  --color-primary: #00754a;
+  --color-secondary: #1d3c34;
+  --color-extra: #cfe6b5;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Open Sans', serif;
+  line-height: 1.2;
+  color: var(--color-black);
+}
+
+a {
+  color: var(--color-black);
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+}
+
+p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+  border: 1px var(--color-black) solid;
+  border-radius: 50px;
+  padding: 7px 16px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn--dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--dark:hover {
+  background-color: var(--color-gray);
+}
+
+.btn--darkOutline {
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.btn--darkOutline:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.btn--secondaryOutline {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn--secondaryOutline:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Nav */
+.nav {
+  width: 100%;
+  height: 100px; /* adjusted this and navcontainer height */
+  background-color: var(--color-white);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 2px 2px 0px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0px;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__link:hover svg {
+  fill: var(--color-primary);
+}
+
+.nav__navLeft {
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.nav__brand {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.nav__link--withIcon {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link--withIcon svg {
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.nav__link--withIcon:hover svg {
+  fill: var(--color-primary);
+}
+
+.nav__navRight li:nth-child(2) {
+  margin: 0 5px;
+}
+
+.nav__navRight li:last-child {
+  margin-right: 0;
+}
+
+/* Sections */
+
+.section {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 32px auto;
+  color: var(--color-secondary);
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.section--backwards {
+  flex-direction: row-reverse;
+}
+
+.section__img {
+  width: 50%;
+  object-fit: contain;
+  background-color: var(--color-extra);
+}
+
+.section__description {
+  width: 50%;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-extra);
+}
+
+.section__descriptionContent {
+  max-width: 83%;
+}
+
+.section__header {
+  font-size: 50px;
+}
+
+.section__header--secondary {
+  font-size: 24px;
+}
+
+.section__text {
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+.section__text--secondary {
+  font-size: 19px;
+}
+
+.section .btn {
+  margin-top: 32px;
+  font-size: 16px;
+}
+
+.section__disclaimer {
+  margin: 64px 48px 0;
+  font-size: 14px;
+  max-width: 646px;
+  width: 50%;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .section__header {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__img,
+  .section__description {
+    width: 100%;
+  }
+
+  .section .btn {
+    font-size: 14px;
+  }
+
+  .section__description {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .section__descriptionContent {
+    max-width: initial;
+  }
+
+  .section__header {
+    font-size: 28px;
+  }
+
+  .section__header--secondary {
+    font-size: 22px;
+  }
+
+  .section__text {
+    font-size: 22px;
+  }
+
+  .section__text--secondary {
+    font-size: 16px;
+  }
+
+  .section__disclaimer {
+    width: initial;
+    margin-right: 16px;
+    margin-left: 16px;
+    font-size: 13px;
+  }
+}
